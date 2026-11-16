@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Velora — Everyday Essentials, Thoughtfully Curated</title>
-<meta name="description" content="Velora is a modern online store for electronics, fashion, shoes, accessories, beauty and home & living.">
+<title>Velora — Lo esencial de cada día, elegido con criterio</title>
+<meta name="description" content="Velora es una tienda online moderna de electrónica, moda, calzado, accesorios, belleza y hogar.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
@@ -208,8 +208,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 .price { font-size: 20px; font-weight: 700; }
 .mrp { font-size: 14px; color: var(--muted); text-decoration: line-through; }
 .off { font-size: 13px; font-weight: 700; color: var(--accent); }
-.card-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px; }
-.card-actions .btn { min-height: 42px; padding: 0 10px; font-size: 14px; }
+.card-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.card-actions .btn { flex: 1 1 auto; min-height: 42px; padding: 0 12px; font-size: 14px; }
 .card-actions .icon { width: 17px; height: 17px; }
 
 /* =========================================================
@@ -431,12 +431,17 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
   .header-inner { gap: 14px; }
 }
 
+/* Mid-size screens: the login button shows only its icon so the header fits */
+@media (max-width: 1180px) {
+  .login-btn span { display: none; }
+  .login-btn { width: 44px; padding: 0; }
+}
+
 @media (max-width: 920px) {
   :root { --header-h: 64px; }
   .section { padding: 56px 0; }
   .menu-toggle, .search-toggle { display: grid; }
-  .login-btn span { display: none; }
-  .login-btn, .login-btn:hover { width: 44px; padding: 0; background: none; color: var(--ink); box-shadow: none; }
+  .login-btn, .login-btn:hover { background: none; color: var(--ink); box-shadow: none; }
   .header-actions { margin-left: auto; gap: 2px; }
 
   /* Mobile nav: slide-down panel */
@@ -468,7 +473,6 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
   .card-body { padding: 12px; }
   .card-name { font-size: 14px; }
   .price { font-size: 17px; }
-  .card-actions { grid-template-columns: 1fr; }
   .toolbar { grid-template-columns: 1fr; }
   .select { min-width: 0; }
   .chips { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 6px; margin-right: -20px; padding-right: 20px; scrollbar-width: none; }
@@ -485,6 +489,14 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
 }
 
 @media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .chips { margin-right: -16px; padding-right: 16px; }
+  .secure { display: none; }
+  .header-inner { gap: 8px; }
+  .header-actions { gap: 0; }
+  .icon-btn, .login-btn { width: 38px; height: 38px; min-height: 38px; }
+  .logo { font-size: 20px; gap: 8px; }
+  .logo-mark { width: 30px; height: 30px; font-size: 17px; }
   .perks { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: 30px; }
   .hero-cta .btn { flex: 1; }
@@ -501,7 +513,7 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
 </head>
 
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 
 <!-- =========================================================
      SVG ICON SPRITE  (use with <svg class="icon"><use href="#i-name"/></svg>)
@@ -530,7 +542,7 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
   <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.500" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/></symbol>
   <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3.500 9.500 12 4l8.500 5.500M5.500 10v7M10 10v7M14 10v7M18.500 10v7M3.500 20h17"/></symbol>
   <symbol id="i-cash" viewBox="0 0 24 24"><rect x="3" y="6.500" width="18" height="11" rx="2"/><circle cx="12" cy="12" r="2.500"/></symbol>
-  <symbol id="i-upi" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 17.500h2"/></symbol>
+  <symbol id="i-mobile" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 17.500h2"/></symbol>
   <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4.500"/><circle cx="12" cy="12" r="3.500"/><path d="M16.800 7.200h.01"/></symbol>
   <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8.500V7a1.500 1.500 0 0 1 1.500-1.500H17V3h-2.500A3.500 3.500 0 0 0 11 6.500v2H8.500V11H11v10h3V11h2.500l.500-2.500Z"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24"><path d="M4.500 4.500 19.500 19.500M19.500 4.500 4.500 19.500"/></symbol>
@@ -538,50 +550,50 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
 </svg>
 
 <!-- Top announcement bar -->
-<div class="topbar">Free shipping on orders over <strong>₹999</strong> · Easy 7-day returns · Cash on delivery available</div>
+<div class="topbar">Envío gratis en compras desde <strong>$150.000</strong> · Cambios y devoluciones en 30 días · Pago contra entrega</div>
 
 <!-- =========================================================
      HEADER / NAVBAR
      ========================================================= -->
 <header class="header" id="header">
   <div class="container header-inner">
-    <a href="#home" class="logo" aria-label="Velora home">
+    <a href="#home" class="logo" aria-label="Velora, inicio">
       <span class="logo-mark" aria-hidden="true">V</span>Velora<span class="dot">.</span>
     </a>
 
-    <nav class="nav" id="nav" aria-label="Main navigation">
+    <nav class="nav" id="nav" aria-label="Navegación principal">
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#shop">Shop</a></li>
-        <li><a href="#categories">Categories</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#shop">Tienda</a></li>
+        <li><a href="#categories">Categorías</a></li>
+        <li><a href="#about">Nosotros</a></li>
+        <li><a href="#contact">Contacto</a></li>
       </ul>
     </nav>
 
     <form class="header-search" id="headerSearch" role="search">
-      <label class="sr-only" for="headerSearchInput">Search products</label>
+      <label class="sr-only" for="headerSearchInput">Buscar productos</label>
       <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
-      <input type="search" id="headerSearchInput" placeholder="Search products…" autocomplete="off">
+      <input type="search" id="headerSearchInput" placeholder="Buscar…" autocomplete="off">
     </form>
 
     <div class="header-actions">
-      <button class="icon-btn search-toggle" id="searchToggle" aria-label="Toggle search" aria-expanded="false" aria-controls="headerSearch">
+      <button class="icon-btn search-toggle" id="searchToggle" aria-label="Abrir o cerrar la búsqueda" aria-expanded="false" aria-controls="headerSearch">
         <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
       </button>
-      <button class="icon-btn" data-action="show-wishlist" aria-label="View wishlist">
+      <button class="icon-btn" data-action="show-wishlist" aria-label="Ver lista de deseos">
         <svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg>
         <span class="count" id="wishCount" hidden>0</span>
       </button>
-      <button class="icon-btn" data-action="open-cart" aria-label="Open shopping cart">
+      <button class="icon-btn" data-action="open-cart" aria-label="Abrir carrito de compras">
         <svg class="icon" aria-hidden="true"><use href="#i-cart"/></svg>
         <span class="count" id="cartCount" hidden>0</span>
       </button>
-      <button class="btn btn-dark login-btn" data-action="open-login" aria-label="Login or register">
+      <button class="btn btn-dark login-btn" data-action="open-login" aria-label="Iniciar sesión o registrarse">
         <svg class="icon" aria-hidden="true"><use href="#i-user"/></svg>
-        <span id="loginLabel">Login / Register</span>
+        <span id="loginLabel">Ingresar / Registrarse</span>
       </button>
-      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Abrir o cerrar el menú" aria-expanded="false" aria-controls="nav">
         <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
       </button>
     </div>
@@ -596,41 +608,41 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
   <section class="hero" id="home">
     <div class="container hero-grid">
       <div class="hero-text reveal">
-        <span class="hero-tag"><b>New</b> Festive Edit — up to 40% off</span>
-        <h1>Everyday essentials, <em>thoughtfully</em> curated.</h1>
-        <p>From sound that moves you to sneakers that keep up — discover quality picks across tech, fashion, beauty and home, delivered fast to your door.</p>
+        <span class="hero-tag"><b>Nuevo</b> Edición de temporada — hasta 40% de descuento</span>
+        <h1>Lo esencial de cada día, <em>elegido</em> con criterio.</h1>
+        <p>Desde audífonos que te envuelven hasta tenis que te siguen el paso: descubre productos de calidad en tecnología, moda, belleza y hogar, con entrega rápida hasta tu puerta.</p>
         <div class="hero-cta">
-          <a href="#shop" class="btn btn-primary btn-lg">Shop Now <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          <a href="#flash-sale" class="btn btn-outline btn-lg">View Flash Sale</a>
+          <a href="#shop" class="btn btn-primary btn-lg">Comprar ahora <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a href="#flash-sale" class="btn btn-outline btn-lg">Ver ofertas relámpago</a>
         </div>
         <div class="hero-stats">
-          <div><strong>50k+</strong><span>Happy customers</span></div>
-          <div><strong>4.8/5</strong><span>Average rating</span></div>
-          <div><strong>48 hr</strong><span>Express dispatch</span></div>
+          <div><strong>50k+</strong><span>Clientes felices</span></div>
+          <div><strong>4.8/5</strong><span>Calificación promedio</span></div>
+          <div><strong>48 h</strong><span>Despacho exprés</span></div>
         </div>
       </div>
 
       <div class="hero-visual reveal">
         <div class="hero-img">
-          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80" alt="Shopper carrying colourful shopping bags" fetchpriority="high">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=80" alt="Persona con bolsas de compras de colores" fetchpriority="high">
         </div>
         <div class="float-card one">
           <span class="bubble"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg></span>
-          <div><strong>Free delivery</strong><span>On orders over ₹999</span></div>
+          <div><strong>Envío gratis</strong><span>En compras desde $150.000</span></div>
         </div>
         <div class="float-card two">
           <span class="bubble"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span>
-          <div><strong>4.8 rating</strong><span>12,400+ reviews</span></div>
+          <div><strong>Calificación 4.8</strong><span>Más de 12.400 reseñas</span></div>
         </div>
       </div>
     </div>
 
     <div class="container" style="margin-top:56px">
       <div class="perks reveal">
-        <div class="perk"><span class="bubble"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg></span><div><strong>Free Shipping</strong><span>Orders above ₹999</span></div></div>
-        <div class="perk"><span class="bubble"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span><div><strong>Secure Payment</strong><span>100% protected checkout</span></div></div>
-        <div class="perk"><span class="bubble"><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg></span><div><strong>Easy Returns</strong><span>7-day return policy</span></div></div>
-        <div class="perk"><span class="bubble"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></span><div><strong>24/7 Support</strong><span>We're here to help</span></div></div>
+        <div class="perk"><span class="bubble"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg></span><div><strong>Envío gratis</strong><span>En compras desde $150.000</span></div></div>
+        <div class="perk"><span class="bubble"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span><div><strong>Pago seguro</strong><span>Compra 100% protegida</span></div></div>
+        <div class="perk"><span class="bubble"><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg></span><div><strong>Devoluciones fáciles</strong><span>Tienes 30 días para devolver</span></div></div>
+        <div class="perk"><span class="bubble"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></span><div><strong>Soporte 24/7</strong><span>Estamos para ayudarte</span></div></div>
       </div>
     </div>
   </section>
@@ -642,10 +654,10 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
     <div class="container">
       <div class="section-head reveal">
         <div>
-          <span class="eyebrow">Browse</span>
-          <h2>Shop by category</h2>
+          <span class="eyebrow">Explora</span>
+          <h2>Compra por categoría</h2>
         </div>
-        <a href="#shop" class="link-arrow">View all products <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a href="#shop" class="link-arrow">Ver todos los productos <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
       <div class="cat-grid reveal" id="categoryGrid"></div>
     </div>
@@ -659,15 +671,15 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
       <div class="flash reveal">
         <div class="section-head">
           <div>
-            <span class="eyebrow">⚡ Flash Sale</span>
-            <h2>Deals that end tonight</h2>
-            <p>Limited stock at our lowest prices of the season.</p>
+            <span class="eyebrow">⚡ Ofertas relámpago</span>
+            <h2>Ofertas que terminan esta noche</h2>
+            <p>Unidades limitadas con los precios más bajos de la temporada.</p>
           </div>
-          <div class="countdown" role="timer" aria-label="Time left in flash sale">
-            <span class="label">Ends in</span>
+          <div class="countdown" role="timer" aria-label="Tiempo restante de las ofertas relámpago">
+            <span class="label">Termina en</span>
             <div class="time-box"><b id="cdH">00</b><small>Hrs</small></div>
             <div class="time-box"><b id="cdM">00</b><small>Min</small></div>
-            <div class="time-box"><b id="cdS">00</b><small>Sec</small></div>
+            <div class="time-box"><b id="cdS">00</b><small>Seg</small></div>
           </div>
         </div>
         <div class="product-grid" id="flashGrid"></div>
@@ -682,32 +694,32 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
     <div class="container">
       <div class="section-head reveal">
         <div>
-          <span class="eyebrow">Our collection</span>
-          <h2>All products</h2>
-          <p>Search, filter by category and sort to find exactly what you need.</p>
+          <span class="eyebrow">Nuestra colección</span>
+          <h2>Todos los productos</h2>
+          <p>Busca, filtra por categoría y ordena para encontrar justo lo que necesitas.</p>
         </div>
       </div>
 
       <div class="toolbar">
         <div class="field-search">
-          <label class="sr-only" for="shopSearch">Search products</label>
+          <label class="sr-only" for="shopSearch">Buscar productos</label>
           <svg class="icon" aria-hidden="true"><use href="#i-search"/></svg>
-          <input type="search" id="shopSearch" placeholder="Search by product name or category…" autocomplete="off">
+          <input type="search" id="shopSearch" placeholder="Busca por nombre de producto o categoría…" autocomplete="off">
         </div>
         <div>
-          <label class="sr-only" for="sortSelect">Sort products</label>
+          <label class="sr-only" for="sortSelect">Ordenar productos</label>
           <select class="select" id="sortSelect">
-            <option value="featured">Sort: Featured</option>
-            <option value="price-asc">Price: Low to High</option>
-            <option value="price-desc">Price: High to Low</option>
-            <option value="rating-desc">Rating: High to Low</option>
-            <option value="rating-asc">Rating: Low to High</option>
-            <option value="discount-desc">Biggest Discount</option>
+            <option value="featured">Ordenar: Destacados</option>
+            <option value="price-asc">Precio: menor a mayor</option>
+            <option value="price-desc">Precio: mayor a menor</option>
+            <option value="rating-desc">Calificación: mayor a menor</option>
+            <option value="rating-asc">Calificación: menor a mayor</option>
+            <option value="discount-desc">Mayor descuento</option>
           </select>
         </div>
       </div>
 
-      <div class="chips" id="categoryChips" role="group" aria-label="Filter by category"></div>
+      <div class="chips" id="categoryChips" role="group" aria-label="Filtrar por categoría"></div>
       <p class="result-count" id="resultCount" aria-live="polite"></p>
       <div class="product-grid" id="shopGrid"></div>
     </div>
@@ -720,8 +732,8 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
     <div class="container">
       <div class="section-head reveal">
         <div>
-          <span class="eyebrow">Customer favourites</span>
-          <h2>Best sellers</h2>
+          <span class="eyebrow">Los favoritos</span>
+          <h2>Los más vendidos</h2>
         </div>
       </div>
       <div class="product-grid" id="bestGrid"></div>
@@ -735,8 +747,8 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
     <div class="container">
       <div class="section-head reveal">
         <div>
-          <span class="eyebrow">Just landed</span>
-          <h2>New arrivals</h2>
+          <span class="eyebrow">Recién llegados</span>
+          <h2>Novedades</h2>
         </div>
       </div>
       <div class="product-grid" id="newGrid"></div>
@@ -749,17 +761,17 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
   <section class="section" id="about" style="padding-top:0">
     <div class="container about-grid">
       <div class="about-img reveal">
-        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80" alt="Inside a bright, modern retail store" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80" alt="Interior de una tienda moderna y luminosa" loading="lazy">
       </div>
       <div class="about-text reveal">
-        <span class="eyebrow">About Velora</span>
-        <h2>Good things, chosen with care.</h2>
-        <p>Velora started with a simple idea: shopping online should feel as considered as walking into your favourite neighbourhood store. Every product in our catalogue is tested and hand-picked by our team.</p>
-        <p>We work directly with trusted brands and makers so you get honest prices, genuine products and service you can count on.</p>
+        <span class="eyebrow">Sobre Velora</span>
+        <h2>Cosas buenas, elegidas con cuidado.</h2>
+        <p>Velora nació de una idea sencilla: comprar por internet debería sentirse tan cercano como entrar a tu tienda de barrio favorita. Nuestro equipo prueba y selecciona a mano cada producto del catálogo.</p>
+        <p>Trabajamos directamente con marcas y fabricantes de confianza para ofrecerte precios justos, productos originales y un servicio con el que puedes contar.</p>
         <ul class="about-list">
-          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>100% genuine, quality-checked products</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Fast, tracked delivery across the country</li>
-          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Friendly support, seven days a week</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Productos 100% originales y con control de calidad</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Envíos rápidos y con seguimiento a todo el país</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Atención amable, los siete días de la semana</li>
         </ul>
       </div>
     </div>
@@ -772,8 +784,8 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
     <div class="container">
       <div class="section-head reveal">
         <div>
-          <span class="eyebrow">Loved by shoppers</span>
-          <h2>What our customers say</h2>
+          <span class="eyebrow">Nos recomiendan</span>
+          <h2>Lo que dicen nuestros clientes</h2>
         </div>
       </div>
       <div class="review-grid reveal" id="reviewGrid"></div>
@@ -786,13 +798,13 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
   <section id="newsletter">
     <div class="container">
       <div class="newsletter reveal">
-        <span class="eyebrow">Stay in the loop</span>
-        <h2>Get 10% off your first order</h2>
-        <p>Subscribe for early access to sales, new arrivals and members-only offers. No spam, ever.</p>
+        <span class="eyebrow">Entérate primero</span>
+        <h2>10% de descuento en tu primera compra</h2>
+        <p>Suscríbete y recibe antes que nadie las ofertas, las novedades y los descuentos exclusivos. Nada de spam.</p>
         <form class="news-form" id="newsForm" novalidate>
-          <label class="sr-only" for="newsEmail">Email address</label>
-          <input type="email" id="newsEmail" placeholder="Enter your email address" autocomplete="email">
-          <button class="btn btn-primary btn-lg" type="submit">Subscribe</button>
+          <label class="sr-only" for="newsEmail">Correo electrónico</label>
+          <input type="email" id="newsEmail" placeholder="Escribe tu correo electrónico" autocomplete="email">
+          <button class="btn btn-primary btn-lg" type="submit">Suscribirme</button>
         </form>
         <p class="form-note" id="newsNote" role="status"></p>
       </div>
@@ -806,35 +818,35 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
     <div class="container">
       <div class="section-head reveal">
         <div>
-          <span class="eyebrow">Get in touch</span>
-          <h2>We'd love to hear from you</h2>
+          <span class="eyebrow">Escríbenos</span>
+          <h2>Nos encantará saber de ti</h2>
         </div>
       </div>
       <div class="contact-grid">
         <div class="contact-info reveal">
-          <div class="contact-item"><span class="bubble"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span><div><span>Email us</span><strong>support@velora.example</strong></div></div>
-          <div class="contact-item"><span class="bubble"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span><div><span>Call us (9am – 9pm)</span><strong>+91 98765 43210</strong></div></div>
-          <div class="contact-item"><span class="bubble"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span><div><span>Visit us</span><strong>221 Market Street, Bengaluru 560001</strong></div></div>
+          <div class="contact-item"><span class="bubble"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span><div><span>Escríbenos</span><strong>soporte@velora.example</strong></div></div>
+          <div class="contact-item"><span class="bubble"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span><div><span>Llámanos (8 a. m. – 8 p. m.)</span><strong>+57 300 123 4567</strong></div></div>
+          <div class="contact-item"><span class="bubble"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span><div><span>Visítanos</span><strong>Calle 85 # 12-34, Bogotá D.C.</strong></div></div>
         </div>
         <form class="panel reveal" id="contactForm" novalidate>
           <div class="form-grid">
             <div class="field">
-              <label for="ctName">Your name</label>
+              <label for="ctName">Tu nombre</label>
               <input type="text" id="ctName" data-rule="name" autocomplete="name">
               <span class="error" role="alert"></span>
             </div>
             <div class="field">
-              <label for="ctEmail">Email</label>
+              <label for="ctEmail">Correo electrónico</label>
               <input type="email" id="ctEmail" data-rule="email" autocomplete="email">
               <span class="error" role="alert"></span>
             </div>
             <div class="field full">
-              <label for="ctMsg">Message</label>
+              <label for="ctMsg">Mensaje</label>
               <textarea id="ctMsg" data-rule="message"></textarea>
               <span class="error" role="alert"></span>
             </div>
             <div class="field full">
-              <button class="btn btn-primary btn-lg" type="submit">Send Message</button>
+              <button class="btn btn-primary btn-lg" type="submit">Enviar mensaje</button>
             </div>
           </div>
         </form>
@@ -851,7 +863,7 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
     <div class="footer-grid">
       <div>
         <a href="#home" class="logo"><span class="logo-mark" aria-hidden="true">V</span>Velora<span class="dot">.</span></a>
-        <p>Velora is your one-stop online store for quality electronics, fashion, beauty and home essentials — curated with care and delivered with a smile.</p>
+        <p>Velora es tu tienda online de electrónica, moda, belleza y hogar: productos de calidad, elegidos con cuidado y entregados con una sonrisa.</p>
         <div class="socials">
           <a href="#" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="#i-instagram"/></svg></a>
           <a href="#" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="#i-facebook"/></svg></a>
@@ -860,35 +872,35 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
         </div>
       </div>
       <div>
-        <h4>Quick Links</h4>
+        <h4>Enlaces rápidos</h4>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#shop">Shop</a></li>
-          <li><a href="#categories">Categories</a></li>
-          <li><a href="#flash-sale">Flash Sale</a></li>
-          <li><a href="#about">About Us</a></li>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#shop">Tienda</a></li>
+          <li><a href="#categories">Categorías</a></li>
+          <li><a href="#flash-sale">Ofertas relámpago</a></li>
+          <li><a href="#about">Sobre nosotros</a></li>
         </ul>
       </div>
       <div>
-        <h4>Customer Support</h4>
+        <h4>Atención al cliente</h4>
         <ul>
-          <li><a href="#contact">Contact Us</a></li>
-          <li><button class="linklike" data-action="open-info" data-info="shipping">Shipping &amp; Delivery</button></li>
-          <li><button class="linklike" data-action="open-info" data-info="returns">Returns &amp; Refunds</button></li>
-          <li><button class="linklike" data-action="open-cart">Your Cart</button></li>
+          <li><a href="#contact">Contáctanos</a></li>
+          <li><button class="linklike" data-action="open-info" data-info="shipping">Envíos y entregas</button></li>
+          <li><button class="linklike" data-action="open-info" data-info="returns">Devoluciones y reembolsos</button></li>
+          <li><button class="linklike" data-action="open-cart">Tu carrito</button></li>
         </ul>
       </div>
       <div>
         <h4>Legal</h4>
         <ul>
-          <li><button class="linklike" data-action="open-info" data-info="privacy">Privacy Policy</button></li>
-          <li><button class="linklike" data-action="open-info" data-info="terms">Terms &amp; Conditions</button></li>
+          <li><button class="linklike" data-action="open-info" data-info="privacy">Política de privacidad</button></li>
+          <li><button class="linklike" data-action="open-info" data-info="terms">Términos y condiciones</button></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span id="year">2026</span> Velora. All rights reserved.</span>
-      <div class="pay-badges" aria-label="Accepted payment methods"><span>UPI</span><span>VISA</span><span>Mastercard</span><span>RuPay</span><span>COD</span></div>
+      <span>© <span id="year">2026</span> Velora. Todos los derechos reservados.</span>
+      <div class="pay-badges" aria-label="Medios de pago aceptados"><span>PSE</span><span>VISA</span><span>Mastercard</span><span>Nequi</span><span>Contra entrega</span></div>
     </div>
   </div>
 </footer>
@@ -901,8 +913,8 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
 <!-- Cart drawer -->
 <aside class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" tabindex="-1">
   <div class="drawer-head">
-    <h2 id="cartTitle">Your Cart</h2>
-    <button class="icon-btn" data-action="close-overlay" aria-label="Close cart"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <h2 id="cartTitle">Tu carrito</h2>
+    <button class="icon-btn" data-action="close-overlay" aria-label="Cerrar carrito"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
   </div>
   <div class="drawer-body" id="cartItems"></div>
   <div class="drawer-foot" id="cartFoot"></div>
@@ -911,30 +923,30 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
 <!-- Login / Register modal -->
 <div class="modal" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle" tabindex="-1">
   <div class="modal-box">
-    <button class="icon-btn modal-close" data-action="close-overlay" aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
-    <h2 id="loginTitle">Welcome to Velora</h2>
-    <p>Sign in to track orders and save your wishlist.</p>
+    <button class="icon-btn modal-close" data-action="close-overlay" aria-label="Cerrar"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <h2 id="loginTitle">Te damos la bienvenida</h2>
+    <p>Ingresa para seguir tus pedidos y guardar tu lista de deseos.</p>
     <div class="tabs" role="tablist">
-      <button role="tab" id="tabLogin" aria-selected="true" data-action="auth-tab" data-tab="login">Login</button>
-      <button role="tab" id="tabRegister" aria-selected="false" data-action="auth-tab" data-tab="register">Register</button>
+      <button role="tab" id="tabLogin" aria-selected="true" data-action="auth-tab" data-tab="login">Ingresar</button>
+      <button role="tab" id="tabRegister" aria-selected="false" data-action="auth-tab" data-tab="register">Registrarse</button>
     </div>
     <form class="stack" id="authForm" novalidate>
       <div class="field" id="authNameField" hidden>
-        <label for="authName">Full name</label>
+        <label for="authName">Nombre completo</label>
         <input type="text" id="authName" data-rule="name" autocomplete="name">
         <span class="error" role="alert"></span>
       </div>
       <div class="field">
-        <label for="authEmail">Email</label>
+        <label for="authEmail">Correo electrónico</label>
         <input type="email" id="authEmail" data-rule="email" autocomplete="email">
         <span class="error" role="alert"></span>
       </div>
       <div class="field">
-        <label for="authPass">Password</label>
+        <label for="authPass">Contraseña</label>
         <input type="password" id="authPass" data-rule="password" autocomplete="current-password">
         <span class="error" role="alert"></span>
       </div>
-      <button class="btn btn-primary btn-lg btn-block" type="submit" id="authSubmit">Login</button>
+      <button class="btn btn-primary btn-lg btn-block" type="submit" id="authSubmit">Ingresar</button>
     </form>
   </div>
 </div>
@@ -942,7 +954,7 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
 <!-- Info modal (privacy, terms, shipping, returns) -->
 <div class="modal" id="infoModal" role="dialog" aria-modal="true" aria-labelledby="infoTitle" tabindex="-1">
   <div class="modal-box">
-    <button class="icon-btn modal-close" data-action="close-overlay" aria-label="Close"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <button class="icon-btn modal-close" data-action="close-overlay" aria-label="Cerrar"><svg class="icon" aria-hidden="true"><use href="#i-close"/></svg></button>
     <h2 id="infoTitle"></h2>
     <p id="infoText" style="margin-bottom:0"></p>
   </div>
@@ -953,88 +965,88 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
   <div class="checkout-bar">
     <div class="container">
       <span class="logo"><span class="logo-mark" aria-hidden="true">V</span>Velora<span class="dot">.</span></span>
-      <span class="secure"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>Secure checkout</span>
-      <button class="btn btn-outline" data-action="close-overlay">← Back to shop</button>
+      <span class="secure"><svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>Pago seguro</span>
+      <button class="btn btn-outline" data-action="close-overlay">← Volver a la tienda</button>
     </div>
   </div>
 
   <div class="container checkout-main" id="checkoutMain">
     <!-- Checkout form view -->
     <div id="checkoutView">
-      <h1 id="checkoutTitle">Checkout</h1>
-      <p>Complete your details below to place your order.</p>
+      <h1 id="checkoutTitle">Finalizar compra</h1>
+      <p>Completa tus datos para realizar el pedido.</p>
 
       <form class="checkout-grid" id="checkoutForm" novalidate>
         <div>
           <div class="panel">
-            <h2><span class="step-num">1</span>Contact details</h2>
+            <h2><span class="step-num">1</span>Datos de contacto</h2>
             <div class="form-grid">
               <div class="field full">
-                <label for="coName">Full name</label>
-                <input type="text" id="coName" name="name" data-rule="name" autocomplete="name" placeholder="e.g. Priya Sharma">
+                <label for="coName">Nombre completo</label>
+                <input type="text" id="coName" name="name" data-rule="name" autocomplete="name" placeholder="Ej.: Laura Gómez">
                 <span class="error" role="alert"></span>
               </div>
               <div class="field">
-                <label for="coEmail">Email</label>
-                <input type="email" id="coEmail" name="email" data-rule="email" autocomplete="email" placeholder="you@example.com">
+                <label for="coEmail">Correo electrónico</label>
+                <input type="email" id="coEmail" name="email" data-rule="email" autocomplete="email" placeholder="tucorreo@ejemplo.com">
                 <span class="error" role="alert"></span>
               </div>
               <div class="field">
-                <label for="coPhone">Phone</label>
-                <input type="tel" id="coPhone" name="phone" data-rule="phone" autocomplete="tel" inputmode="numeric" placeholder="10-digit mobile number">
+                <label for="coPhone">Celular</label>
+                <input type="tel" id="coPhone" name="phone" data-rule="phone" autocomplete="tel" inputmode="numeric" placeholder="Ej.: 300 123 4567">
                 <span class="error" role="alert"></span>
               </div>
             </div>
           </div>
 
           <div class="panel">
-            <h2><span class="step-num">2</span>Shipping address</h2>
+            <h2><span class="step-num">2</span>Dirección de envío</h2>
             <div class="form-grid">
               <div class="field full">
-                <label for="coAddress">Address</label>
-                <input type="text" id="coAddress" name="address" data-rule="address" autocomplete="street-address" placeholder="House no., street, area">
+                <label for="coAddress">Dirección</label>
+                <input type="text" id="coAddress" name="address" data-rule="address" autocomplete="street-address" placeholder="Ej.: Calle 10 # 20-30, apto 301, barrio">
                 <span class="error" role="alert"></span>
               </div>
               <div class="field">
-                <label for="coCity">City</label>
+                <label for="coCity">Ciudad o municipio</label>
                 <input type="text" id="coCity" name="city" data-rule="city" autocomplete="address-level2">
                 <span class="error" role="alert"></span>
               </div>
               <div class="field">
-                <label for="coState">State</label>
+                <label for="coState">Departamento</label>
                 <select id="coState" name="state" data-rule="required" autocomplete="address-level1">
-                  <option value="">Select state</option>
+                  <option value="">Selecciona un departamento</option>
                 </select>
                 <span class="error" role="alert"></span>
               </div>
               <div class="field">
-                <label for="coPin">PIN code</label>
-                <input type="text" id="coPin" name="pin" data-rule="pin" autocomplete="postal-code" inputmode="numeric" maxlength="6" placeholder="6-digit PIN">
+                <label for="coPin">Código postal (opcional)</label>
+                <input type="text" id="coPin" name="pin" data-rule="pin" autocomplete="postal-code" inputmode="numeric" maxlength="6" placeholder="6 dígitos">
                 <span class="error" role="alert"></span>
               </div>
             </div>
           </div>
 
           <div class="panel">
-            <h2><span class="step-num">3</span>Payment method</h2>
+            <h2><span class="step-num">3</span>Método de pago</h2>
             <fieldset>
-              <legend class="sr-only">Choose a payment method</legend>
+              <legend class="sr-only">Elige un método de pago</legend>
               <div class="pay-grid">
                 <div class="pay-option">
-                  <input type="radio" name="payment" id="payUpi" value="UPI">
-                  <label for="payUpi"><svg class="icon" aria-hidden="true"><use href="#i-upi"/></svg><span><b>UPI</b><small>GPay, PhonePe, Paytm</small></span></label>
+                  <input type="radio" name="payment" id="payPse" value="PSE">
+                  <label for="payPse"><svg class="icon" aria-hidden="true"><use href="#i-bank"/></svg><span><b>PSE</b><small>Débito desde tu banco</small></span></label>
                 </div>
                 <div class="pay-option">
-                  <input type="radio" name="payment" id="payCard" value="Credit / Debit Card">
-                  <label for="payCard"><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg><span><b>Credit / Debit Card</b><small>Visa, Mastercard, RuPay</small></span></label>
+                  <input type="radio" name="payment" id="payCard" value="Tarjeta de crédito o débito">
+                  <label for="payCard"><svg class="icon" aria-hidden="true"><use href="#i-card"/></svg><span><b>Tarjeta de crédito o débito</b><small>Visa, Mastercard, Amex</small></span></label>
                 </div>
                 <div class="pay-option">
-                  <input type="radio" name="payment" id="payBank" value="Net Banking">
-                  <label for="payBank"><svg class="icon" aria-hidden="true"><use href="#i-bank"/></svg><span><b>Net Banking</b><small>All major banks</small></span></label>
+                  <input type="radio" name="payment" id="payWallet" value="Nequi / Daviplata">
+                  <label for="payWallet"><svg class="icon" aria-hidden="true"><use href="#i-mobile"/></svg><span><b>Nequi / Daviplata</b><small>Paga desde tu celular</small></span></label>
                 </div>
                 <div class="pay-option">
-                  <input type="radio" name="payment" id="payCod" value="Cash on Delivery">
-                  <label for="payCod"><svg class="icon" aria-hidden="true"><use href="#i-cash"/></svg><span><b>Cash on Delivery</b><small>Pay when it arrives</small></span></label>
+                  <input type="radio" name="payment" id="payCod" value="Pago contra entrega">
+                  <label for="payCod"><svg class="icon" aria-hidden="true"><use href="#i-cash"/></svg><span><b>Pago contra entrega</b><small>Pagas al recibir tu pedido</small></span></label>
                 </div>
               </div>
               <span class="error" id="payError" role="alert" style="display:block;margin-top:10px"></span>
@@ -1042,14 +1054,14 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
           </div>
         </div>
 
-        <aside class="panel summary" aria-label="Order summary">
-          <h2>Order summary</h2>
+        <aside class="panel summary" aria-label="Resumen del pedido">
+          <h2>Resumen del pedido</h2>
           <div class="summary-items" id="summaryItems"></div>
           <div class="totals" id="summaryTotals"></div>
           <button class="btn btn-primary btn-lg btn-block" type="submit">
-            <svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>Place Order
+            <svg class="icon" aria-hidden="true"><use href="#i-lock"/></svg>Realizar pedido
           </button>
-          <p class="terms-note">By placing your order you agree to our Terms &amp; Conditions.</p>
+          <p class="terms-note">Al realizar el pedido aceptas nuestros Términos y condiciones.</p>
         </aside>
       </form>
     </div>
@@ -1060,7 +1072,7 @@ fieldset { border: none; margin: 0; padding: 0; min-width: 0; }
 </section>
 
 <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
-<button class="to-top" id="toTop" aria-label="Back to top"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></button>
+<button class="to-top" id="toTop" aria-label="Volver arriba"><svg class="icon" aria-hidden="true"><use href="#i-up"/></svg></button>
 
 
 <script>
@@ -1083,57 +1095,58 @@ document.documentElement.classList.add('js');
 
 /* ---------- 1. SETTINGS & DATA ---------- */
 const SETTINGS = {
-  locale: 'en-IN',
-  currency: 'INR',
-  freeShippingMin: 999,   // orders at or above this ship free
-  shippingFee: 49
+  locale: 'es-CO',
+  currency: 'COP',
+  freeShippingMin: 150000,   // orders at or above this ship free
+  shippingFee: 12000
 };
 
 // Builds an Unsplash image URL from a photo id
 const img = (id, w = 600) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=75`;
 
 const CATEGORIES = [
-  { id: 'electronics', name: 'Electronics',   image: img('1498049794561-7780e7231661') },
-  { id: 'fashion',     name: 'Fashion',       image: img('1445205170230-053b83016050') },
-  { id: 'shoes',       name: 'Shoes',         image: img('1549298916-b41d501d3772') },
-  { id: 'accessories', name: 'Accessories',   image: img('1523275335684-37898b6baf30') },
-  { id: 'beauty',      name: 'Beauty',        image: img('1522335789203-aabd1fc54bc9') },
-  { id: 'home',        name: 'Home & Living', image: img('1586023492125-27b2c045efd7') }
+  { id: 'electronics', name: 'Electrónica',  image: img('1498049794561-7780e7231661') },
+  { id: 'fashion',     name: 'Moda',          image: img('1445205170230-053b83016050') },
+  { id: 'shoes',       name: 'Calzado',       image: img('1549298916-b41d501d3772') },
+  { id: 'accessories', name: 'Accesorios',    image: img('1523275335684-37898b6baf30') },
+  { id: 'beauty',      name: 'Belleza',       image: img('1522335789203-aabd1fc54bc9') },
+  { id: 'home',        name: 'Hogar',         image: img('1586023492125-27b2c045efd7') }
 ];
 
 // price = selling price, mrp = original price. tags: 'flash', 'best', 'new'
 const PRODUCTS = [
-  { id: 1,  name: 'Aura Wireless Noise-Cancelling Headphones', category: 'electronics', price: 4999,  mrp: 7999,  rating: 4.7, reviews: 2184, image: img('1505740420928-5e560c06d30e'), tags: ['flash', 'best'] },
-  { id: 2,  name: 'Pulse Smart Fitness Watch',                 category: 'electronics', price: 3499,  mrp: 5999,  rating: 4.5, reviews: 1532, image: img('1546868871-7041f2a55e12'), tags: ['best'] },
-  { id: 3,  name: 'Retro Instant Film Camera',                 category: 'electronics', price: 6299,  mrp: 7499,  rating: 4.6, reviews: 642,  image: img('1526170375885-4d8ecf77b99f'), tags: ['new'] },
-  { id: 4,  name: 'AirLite 14" Ultrabook Laptop',              category: 'electronics', price: 54990, mrp: 64990, rating: 4.8, reviews: 918,  image: img('1496181133206-80ce9b88a853'), tags: [] },
-  { id: 5,  name: 'Classic Cotton Crew-Neck Tee',              category: 'fashion',     price: 599,   mrp: 999,   rating: 4.3, reviews: 3120, image: img('1521572163474-6864f9cf17ab'), tags: ['flash'] },
-  { id: 6,  name: 'Heritage Leather Biker Jacket',             category: 'fashion',     price: 4499,  mrp: 6999,  rating: 4.6, reviews: 487,  image: img('1551028719-00167b16eac5'), tags: ['new'] },
-  { id: 7,  name: 'Velocity Red Running Sneakers',             category: 'shoes',       price: 2999,  mrp: 4499,  rating: 4.7, reviews: 2749, image: img('1542291026-7eec264c27ff'), tags: ['flash', 'best'] },
-  { id: 8,  name: 'Everyday Canvas High-Tops',                 category: 'shoes',       price: 1899,  mrp: 2499,  rating: 4.2, reviews: 1066, image: img('1460353581641-37baddab0fa2'), tags: [] },
-  { id: 9,  name: 'Minimalist Analog Wrist Watch',             category: 'accessories', price: 2299,  mrp: 3999,  rating: 4.4, reviews: 1298, image: img('1523275335684-37898b6baf30'), tags: ['best'] },
-  { id: 10, name: 'Coastline Polarized Sunglasses',            category: 'accessories', price: 1299,  mrp: 1999,  rating: 4.1, reviews: 754,  image: img('1572635196237-14b3f281503f'), tags: [] },
-  { id: 11, name: 'Urban Commuter Travel Backpack',            category: 'accessories', price: 1799,  mrp: 2999,  rating: 4.5, reviews: 1873, image: img('1553062407-98eeb64c6a62'), tags: ['flash'] },
-  { id: 12, name: 'Saffiano Leather Tote Handbag',             category: 'accessories', price: 2599,  mrp: 3499,  rating: 4.3, reviews: 529,  image: img('1584917865442-de89df76afd3'), tags: ['new'] },
-  { id: 13, name: 'Noir Eau de Parfum, 50 ml',                 category: 'beauty',      price: 1999,  mrp: 2999,  rating: 4.6, reviews: 1411, image: img('1585386959984-a4155224a1ad'), tags: [] },
-  { id: 14, name: 'Dew Hydrating Skincare Set',                category: 'beauty',      price: 1499,  mrp: 2199,  rating: 4.4, reviews: 962,  image: img('1556228720-195a672e8a03'), tags: ['new'] },
-  { id: 15, name: 'Nordic 3-Seater Fabric Sofa',               category: 'home',        price: 24990, mrp: 34990, rating: 4.7, reviews: 318,  image: img('1555041469-a586c61ea9bc'), tags: [] },
-  { id: 16, name: 'Glow Ceramic Table Lamp',                   category: 'home',        price: 1599,  mrp: 2299,  rating: 4.2, reviews: 603,  image: img('1507473885765-e6ed057f782c'), tags: [] }
+  { id: 1,  name: 'Audífonos Inalámbricos Aura con Cancelación de Ruido', category: 'electronics', price: 249900,  mrp: 399900,  rating: 4.7, reviews: 2184, image: img('1505740420928-5e560c06d30e'), tags: ['flash', 'best'] },
+  { id: 2,  name: 'Reloj Inteligente Deportivo Pulse',          category: 'electronics', price: 179900,  mrp: 299900,  rating: 4.5, reviews: 1532, image: img('1546868871-7041f2a55e12'), tags: ['best'] },
+  { id: 3,  name: 'Cámara Instantánea Retro',                   category: 'electronics', price: 319900,  mrp: 379900,  rating: 4.6, reviews: 642,  image: img('1526170375885-4d8ecf77b99f'), tags: ['new'] },
+  { id: 4,  name: 'Portátil Ultraliviano AirLite 14"',          category: 'electronics', price: 2799900, mrp: 3299900, rating: 4.8, reviews: 918,  image: img('1496181133206-80ce9b88a853'), tags: [] },
+  { id: 5,  name: 'Camiseta Clásica de Algodón Cuello Redondo', category: 'fashion',     price: 35900,   mrp: 59900,   rating: 4.3, reviews: 3120, image: img('1521572163474-6864f9cf17ab'), tags: ['flash'] },
+  { id: 6,  name: 'Chaqueta Biker de Cuero Heritage',           category: 'fashion',     price: 229900,  mrp: 349900,  rating: 4.6, reviews: 487,  image: img('1551028719-00167b16eac5'), tags: ['new'] },
+  { id: 7,  name: 'Tenis Rojos para Correr Velocity',           category: 'shoes',       price: 159900,  mrp: 239900,  rating: 4.7, reviews: 2749, image: img('1542291026-7eec264c27ff'), tags: ['flash', 'best'] },
+  { id: 8,  name: 'Tenis de Lona Bota Alta',                    category: 'shoes',       price: 99900,   mrp: 129900,  rating: 4.2, reviews: 1066, image: img('1460353581641-37baddab0fa2'), tags: [] },
+  { id: 9,  name: 'Reloj Análogo Minimalista',                  category: 'accessories', price: 119900,  mrp: 199900,  rating: 4.4, reviews: 1298, image: img('1523275335684-37898b6baf30'), tags: ['best'] },
+  { id: 10, name: 'Gafas de Sol Polarizadas Coastline',         category: 'accessories', price: 69900,   mrp: 99900,   rating: 4.1, reviews: 754,  image: img('1572635196237-14b3f281503f'), tags: [] },
+  { id: 11, name: 'Morral de Viaje Urbano',                     category: 'accessories', price: 89900,   mrp: 149900,  rating: 4.5, reviews: 1873, image: img('1553062407-98eeb64c6a62'), tags: ['flash'] },
+  { id: 12, name: 'Bolso Tote de Cuero Saffiano',               category: 'accessories', price: 139900,  mrp: 189900,  rating: 4.3, reviews: 529,  image: img('1584917865442-de89df76afd3'), tags: ['new'] },
+  { id: 13, name: 'Eau de Parfum Noir, 50 ml',                  category: 'beauty',      price: 109900,  mrp: 159900,  rating: 4.6, reviews: 1411, image: img('1585386959984-a4155224a1ad'), tags: [] },
+  { id: 14, name: 'Kit de Cuidado Facial Hidratante Dew',       category: 'beauty',      price: 79900,   mrp: 119900,  rating: 4.4, reviews: 962,  image: img('1556228720-195a672e8a03'), tags: ['new'] },
+  { id: 15, name: 'Sofá Nórdico de Tela, 3 Puestos',            category: 'home',        price: 1299900, mrp: 1799900, rating: 4.7, reviews: 318,  image: img('1555041469-a586c61ea9bc'), tags: [] },
+  { id: 16, name: 'Lámpara de Mesa en Cerámica Glow',           category: 'home',        price: 84900,   mrp: 119900,  rating: 4.2, reviews: 603,  image: img('1507473885765-e6ed057f782c'), tags: [] }
 ];
 
 const REVIEWS = [
-  { name: 'Ananya Rao',    city: 'Bengaluru', rating: 5,   text: 'The headphones arrived in two days and sound incredible. Packaging was lovely and the whole experience felt premium.' },
-  { name: 'Rohan Mehta',   city: 'Mumbai',    rating: 4.5, text: 'Great prices and genuinely good quality. I had to exchange a size on my sneakers and the return was completely hassle-free.' },
-  { name: 'Sara Fernandes', city: 'Pune',     rating: 5,   text: 'My go-to store now. The site is easy to use, checkout takes a minute and support actually replies. Highly recommend.' }
+  { name: 'Valentina Restrepo', city: 'Medellín', rating: 5,   text: 'Los audífonos llegaron en dos días y suenan increíble. El empaque muy bonito y toda la experiencia se sintió de primera.' },
+  { name: 'Andrés Gómez',       city: 'Bogotá',   rating: 4.5, text: 'Buenos precios y muy buena calidad. Tuve que cambiar la talla de unos tenis y el cambio fue rápido y sin complicaciones.' },
+  { name: 'Camila Torres',      city: 'Cali',     rating: 5,   text: 'Ya es mi tienda de confianza. La página es fácil de usar, pagar toma un minuto y el soporte sí responde. Súper recomendada.' }
 ];
 
-const STATES = ['Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Delhi', 'Goa', 'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jammu & Kashmir', 'Jharkhand', 'Karnataka', 'Kerala', 'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland', 'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal'];
+// Departments of Colombia (shown in the checkout "Departamento" list)
+const STATES = ['Amazonas', 'Antioquia', 'Arauca', 'Atlántico', 'Bogotá D.C.', 'Bolívar', 'Boyacá', 'Caldas', 'Caquetá', 'Casanare', 'Cauca', 'Cesar', 'Chocó', 'Córdoba', 'Cundinamarca', 'Guainía', 'Guaviare', 'Huila', 'La Guajira', 'Magdalena', 'Meta', 'Nariño', 'Norte de Santander', 'Putumayo', 'Quindío', 'Risaralda', 'San Andrés y Providencia', 'Santander', 'Sucre', 'Tolima', 'Valle del Cauca', 'Vaupés', 'Vichada'];
 
 const INFO_PAGES = {
-  privacy:  ['Privacy Policy', 'We collect only the information needed to process your orders and improve your shopping experience. We never sell your personal data to third parties. You can request a copy or deletion of your data at any time by contacting our support team.'],
-  terms:    ['Terms & Conditions', 'By using this website you agree to our terms of sale. Prices and availability may change without notice. Orders are confirmed only after successful payment or cash-on-delivery verification. Please review product details carefully before purchase.'],
-  shipping: ['Shipping & Delivery', 'Orders are dispatched within 48 hours and usually arrive in 3–6 business days. Shipping is free on orders of ₹999 or more; a flat ₹49 fee applies below that. You will receive a tracking link by email once your order ships.'],
-  returns:  ['Returns & Refunds', 'Not happy with your purchase? Return any unused item in its original packaging within 7 days of delivery. Refunds are issued to your original payment method within 5–7 business days after we receive the item.']
+  privacy:  ['Política de privacidad', 'Solo recopilamos la información necesaria para procesar tus pedidos y mejorar tu experiencia de compra. Nunca vendemos tus datos personales a terceros. Puedes pedir una copia de tus datos o su eliminación en cualquier momento escribiendo a nuestro equipo de soporte.'],
+  terms:    ['Términos y condiciones', 'Al usar este sitio aceptas nuestras condiciones de venta. Los precios y la disponibilidad pueden cambiar sin previo aviso. Los pedidos se confirman una vez aprobado el pago o verificado el pago contra entrega. Revisa bien los detalles del producto antes de comprar.'],
+  shipping: ['Envíos y entregas', 'Despachamos los pedidos en un máximo de 48 horas y suelen llegar en 3 a 6 días hábiles. El envío es gratis en compras desde $150.000; por debajo de ese valor tiene un costo fijo de $12.000. Cuando tu pedido salga recibirás por correo un enlace de seguimiento.'],
+  returns:  ['Devoluciones y reembolsos', '¿No quedaste conforme con tu compra? Puedes devolver cualquier producto sin usar y en su empaque original dentro de los 30 días siguientes a la entrega. El reembolso se hace al mismo medio de pago entre 5 y 7 días hábiles después de recibir el producto.']
 };
 
 /* ---------- 2. STATE ---------- */
@@ -1168,6 +1181,8 @@ const money = amount => moneyFormat.format(amount);
 const findProduct  = id => PRODUCTS.find(p => p.id === Number(id));
 const categoryName = id => CATEGORIES.find(c => c.id === id)?.name ?? id;
 const discountOf   = p => Math.round((1 - p.price / p.mrp) * 100);
+// Lowercase text without accents, so searching "sofa" also finds "Sofá"
+const plain        = text => text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 const icon         = name => `<svg class="icon" aria-hidden="true"><use href="#i-${name}"/></svg>`;
 
 // Escape text before putting it inside HTML (protects against broken markup)
@@ -1195,24 +1210,24 @@ function productCard(p) {
       <div class="card-media">
         <img src="${p.image}" alt="${escapeHtml(p.name)}" loading="lazy" width="600" height="600">
         <span class="badge">-${discountOf(p)}%</span>
-        ${p.tags.includes('new') ? '<span class="badge new">New</span>' : ''}
-        <button class="wish-btn" data-action="wish" data-id="${p.id}" aria-pressed="${wished}" aria-label="${wished ? 'Remove from' : 'Add to'} wishlist: ${escapeHtml(p.name)}">${icon('heart')}</button>
+        ${p.tags.includes('new') ? '<span class="badge new">Nuevo</span>' : ''}
+        <button class="wish-btn" data-action="wish" data-id="${p.id}" aria-pressed="${wished}" aria-label="${wished ? 'Quitar de' : 'Agregar a'} la lista de deseos: ${escapeHtml(p.name)}">${icon('heart')}</button>
       </div>
       <div class="card-body">
         <span class="card-cat">${categoryName(p.category)}</span>
         <h3 class="card-name">${escapeHtml(p.name)}</h3>
         <div class="rating">
-          <span class="stars" style="--r:${p.rating}" role="img" aria-label="Rated ${p.rating} out of 5"></span>
+          <span class="stars" style="--r:${p.rating}" role="img" aria-label="Calificación: ${p.rating} de 5"></span>
           <b>${p.rating}</b><span>(${p.reviews.toLocaleString(SETTINGS.locale)})</span>
         </div>
         <div class="price-row">
           <span class="price">${money(p.price)}</span>
-          <span class="mrp"><span class="sr-only">Original price </span>${money(p.mrp)}</span>
-          <span class="off">${discountOf(p)}% off</span>
+          <span class="mrp"><span class="sr-only">Precio original </span>${money(p.mrp)}</span>
+          <span class="off">${discountOf(p)}% dcto.</span>
         </div>
         <div class="card-actions">
-          <button class="btn btn-outline" data-action="add" data-id="${p.id}">${icon('cart')}Add to Cart</button>
-          <button class="btn btn-primary" data-action="buy" data-id="${p.id}">Buy Now</button>
+          <button class="btn btn-outline" data-action="add" data-id="${p.id}" aria-label="Agregar al carrito: ${escapeHtml(p.name)}">${icon('cart')}Agregar</button>
+          <button class="btn btn-primary" data-action="buy" data-id="${p.id}">Comprar ahora</button>
         </div>
       </div>
     </article>`;
@@ -1224,13 +1239,13 @@ function renderCategories() {
     return `
       <button class="cat-card" data-action="pick-category" data-category="${c.id}">
         <img src="${c.image}" alt="" loading="lazy">
-        <span class="cat-info"><strong>${c.name}</strong><span>${count} products</span></span>
+        <span class="cat-info"><strong>${c.name}</strong><span>${count} productos</span></span>
       </button>`;
   }).join('');
 }
 
 function renderChips() {
-  const chips = [{ id: 'all', name: 'All' }, ...CATEGORIES, { id: 'wishlist', name: `♥ Wishlist (${state.wishlist.size})` }];
+  const chips = [{ id: 'all', name: 'Todo' }, ...CATEGORIES, { id: 'wishlist', name: `♥ Deseos (${state.wishlist.size})` }];
   $('#categoryChips').innerHTML = chips.map(c =>
     `<button class="chip" data-action="pick-category" data-category="${c.id}" aria-pressed="${state.category === c.id}">${c.name}</button>`
   ).join('');
@@ -1246,21 +1261,21 @@ function renderFeaturedRows() {
 function renderReviews() {
   $('#reviewGrid').innerHTML = REVIEWS.map(r => `
     <figure class="review" style="margin:0">
-      <span class="stars" style="--r:${r.rating}" role="img" aria-label="Rated ${r.rating} out of 5"></span>
+      <span class="stars" style="--r:${r.rating}" role="img" aria-label="Calificación: ${r.rating} de 5"></span>
       <blockquote>“${r.text}”</blockquote>
       <figcaption class="reviewer">
         <span class="avatar" aria-hidden="true">${r.name.split(' ').map(w => w[0]).join('')}</span>
-        <div><strong>${r.name}</strong><span>Verified buyer · ${r.city}</span></div>
+        <div><strong>${r.name}</strong><span>Compra verificada · ${r.city}</span></div>
       </figcaption>
     </figure>`).join('');
 }
 
 /* ---------- 5. SEARCH / FILTER / SORT ---------- */
 function getVisibleProducts() {
-  const q = state.query.trim().toLowerCase();
+  const q = plain(state.query.trim());
 
   let list = PRODUCTS.filter(p => {
-    const matchesSearch = !q || p.name.toLowerCase().includes(q) || categoryName(p.category).toLowerCase().includes(q);
+    const matchesSearch = !q || plain(p.name).includes(q) || plain(categoryName(p.category)).includes(q);
     const matchesCategory =
       state.category === 'all' ? true :
       state.category === 'wishlist' ? state.wishlist.has(p.id) :
@@ -1287,16 +1302,16 @@ function renderShop() {
     grid.innerHTML = list.map(productCard).join('');
   } else {
     const reason = state.query
-      ? `No products match “${escapeHtml(state.query)}”.`
-      : state.category === 'wishlist' ? 'Your wishlist is empty. Tap the heart on any product to save it.' : 'No products in this category yet.';
+      ? `Ningún producto coincide con “${escapeHtml(state.query)}”.`
+      : state.category === 'wishlist' ? 'Tu lista de deseos está vacía. Toca el corazón de cualquier producto para guardarlo.' : 'Aún no hay productos en esta categoría.';
     grid.innerHTML = `
       <div class="empty">
-        <h3>Nothing found</h3>
+        <h3>Sin resultados</h3>
         <p>${reason}</p>
-        <button class="btn btn-dark" data-action="reset-filters">Clear filters</button>
+        <button class="btn btn-dark" data-action="reset-filters">Limpiar filtros</button>
       </div>`;
   }
-  $('#resultCount').textContent = `Showing ${list.length} of ${PRODUCTS.length} products`;
+  $('#resultCount').textContent = `Mostrando ${list.length} de ${PRODUCTS.length} productos`;
   renderChips();
 }
 
@@ -1343,7 +1358,7 @@ function addToCart(id, silent = false) {
   if (!product) return;
   state.cart[id] = (state.cart[id] || 0) + 1;
   cartChanged();
-  if (!silent) toast(`Added to cart: ${product.name}`);
+  if (!silent) toast(`Agregado al carrito: ${product.name}`);
 }
 
 function changeQty(id, delta) {
@@ -1356,7 +1371,7 @@ function changeQty(id, delta) {
 function removeFromCart(id) {
   delete state.cart[id];
   cartChanged();
-  toast('Item removed from cart');
+  toast('Producto eliminado del carrito');
 }
 
 function clearCart() {
@@ -1372,9 +1387,9 @@ function cartChanged() {
 
 function totalsHtml(t) {
   return `
-    <div><span class="muted">Subtotal (${t.count} item${t.count === 1 ? '' : 's'})</span><span>${money(t.subtotal)}</span></div>
-    ${t.savings > 0 ? `<div class="save"><span>You save</span><span>− ${money(t.savings)}</span></div>` : ''}
-    <div><span class="muted">Shipping</span><span>${t.shipping === 0 ? 'FREE' : money(t.shipping)}</span></div>
+    <div><span class="muted">Subtotal (${t.count} producto${t.count === 1 ? '' : 's'})</span><span>${money(t.subtotal)}</span></div>
+    ${t.savings > 0 ? `<div class="save"><span>Ahorras</span><span>− ${money(t.savings)}</span></div>` : ''}
+    <div><span class="muted">Envío</span><span>${t.shipping === 0 ? 'GRATIS' : money(t.shipping)}</span></div>
     <div class="grand"><span>Total</span><span>${money(t.total)}</span></div>`;
 }
 
@@ -1392,9 +1407,9 @@ function renderCart() {
     $('#cartItems').innerHTML = `
       <div class="cart-empty">
         <div class="bubble">${icon('cart')}</div>
-        <h3>Your cart is empty</h3>
-        <p>Looks like you haven't added anything yet.</p>
-        <button class="btn btn-primary" data-action="continue-shopping">Start Shopping</button>
+        <h3>Tu carrito está vacío</h3>
+        <p>Todavía no has agregado ningún producto.</p>
+        <button class="btn btn-primary" data-action="continue-shopping">Empezar a comprar</button>
       </div>`;
     $('#cartFoot').hidden = true;
     return;
@@ -1405,15 +1420,15 @@ function renderCart() {
       <img src="${p.image}" alt="">
       <div>
         <h3>${escapeHtml(p.name)}</h3>
-        <span class="unit">${money(p.price)} each</span><br>
+        <span class="unit">${money(p.price)} c/u</span><br>
         <div class="qty">
-          <button data-action="dec" data-id="${p.id}" aria-label="Decrease quantity of ${escapeHtml(p.name)}">−</button>
-          <output aria-label="Quantity">${qty}</output>
-          <button data-action="inc" data-id="${p.id}" aria-label="Increase quantity of ${escapeHtml(p.name)}">+</button>
+          <button data-action="dec" data-id="${p.id}" aria-label="Disminuir cantidad de ${escapeHtml(p.name)}">−</button>
+          <output aria-label="Cantidad">${qty}</output>
+          <button data-action="inc" data-id="${p.id}" aria-label="Aumentar cantidad de ${escapeHtml(p.name)}">+</button>
         </div>
       </div>
       <div class="side">
-        <button class="remove-btn" data-action="remove" data-id="${p.id}" aria-label="Remove ${escapeHtml(p.name)} from cart">${icon('trash')}</button>
+        <button class="remove-btn" data-action="remove" data-id="${p.id}" aria-label="Eliminar ${escapeHtml(p.name)} del carrito">${icon('trash')}</button>
         <span class="line-total">${money(p.price * qty)}</span>
       </div>
     </div>`).join('');
@@ -1422,9 +1437,9 @@ function renderCart() {
   $('#cartFoot').hidden = false;
   $('#cartFoot').innerHTML = `
     <div class="totals">${totalsHtml(totals)}</div>
-    <p class="ship-hint">${left > 0 ? `Add ${money(left)} more to get FREE shipping.` : '🎉 You have unlocked FREE shipping!'}</p>
-    <button class="btn btn-primary btn-lg btn-block" data-action="open-checkout">Proceed to Checkout</button>
-    <button class="btn btn-ghost btn-block" data-action="clear-cart">${icon('trash')}Clear Cart</button>`;
+    <p class="ship-hint">${left > 0 ? `Te faltan ${money(left)} para el envío GRATIS.` : '🎉 ¡Ya tienes envío GRATIS!'}</p>
+    <button class="btn btn-primary btn-lg btn-block" data-action="open-checkout">Finalizar compra</button>
+    <button class="btn btn-ghost btn-block" data-action="clear-cart">${icon('trash')}Vaciar carrito</button>`;
 }
 
 /* ---------- 7. WISHLIST ---------- */
@@ -1433,15 +1448,15 @@ function toggleWishlist(id) {
   const product = findProduct(id);
   if (!product) return;
 
-  if (state.wishlist.has(id)) { state.wishlist.delete(id); toast('Removed from wishlist'); }
-  else { state.wishlist.add(id); toast('Saved to wishlist'); }
+  if (state.wishlist.has(id)) { state.wishlist.delete(id); toast('Eliminado de la lista de deseos'); }
+  else { state.wishlist.add(id); toast('Guardado en la lista de deseos'); }
   save();
 
   // Update every heart button for this product without re-rendering the page
   const wished = state.wishlist.has(id);
   $$(`.wish-btn[data-id="${id}"]`).forEach(btn => {
     btn.setAttribute('aria-pressed', wished);
-    btn.setAttribute('aria-label', `${wished ? 'Remove from' : 'Add to'} wishlist: ${product.name}`);
+    btn.setAttribute('aria-label', `${wished ? 'Quitar de' : 'Agregar a'} la lista de deseos: ${product.name}`);
   });
   renderWishCount();
   if (state.category === 'wishlist') renderShop(); else renderChips();
@@ -1501,15 +1516,17 @@ function openInfo(key) {
 /* ---------- 9. CHECKOUT + VALIDATION ---------- */
 // Each rule returns an error message, or '' when the value is valid
 const RULES = {
-  required: v => v ? '' : 'Please make a selection.',
-  name:     v => v.length >= 3 && /^[\p{L} .'-]+$/u.test(v) ? '' : 'Please enter your full name.',
-  email:    v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? '' : 'Please enter a valid email address.',
-  phone:    v => /^[6-9]\d{9}$/.test(v.replace(/[\s-]/g, '').replace(/^(\+91|0)/, '')) ? '' : 'Enter a valid 10-digit mobile number.',
-  address:  v => v.length >= 8 ? '' : 'Please enter your complete address.',
-  city:     v => v.length >= 2 && /^[\p{L} .'-]+$/u.test(v) ? '' : 'Please enter a valid city.',
-  pin:      v => /^[1-9]\d{5}$/.test(v) ? '' : 'Enter a valid 6-digit PIN code.',
-  password: v => v.length >= 6 ? '' : 'Password must be at least 6 characters.',
-  message:  v => v.length >= 10 ? '' : 'Please write at least 10 characters.'
+  required: v => v ? '' : 'Selecciona una opción.',
+  name:     v => v.length >= 3 && /^[\p{L} .'-]+$/u.test(v) ? '' : 'Escribe tu nombre completo.',
+  email:    v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? '' : 'Escribe un correo electrónico válido.',
+  // Colombian mobile numbers: 10 digits starting with 3 (an optional +57 prefix is accepted)
+  phone:    v => /^3\d{9}$/.test(v.replace(/\D/g, '').replace(/^57(?=\d{10}$)/, '')) ? '' : 'Escribe un celular válido de 10 dígitos (ej.: 300 123 4567).',
+  address:  v => v.length >= 8 ? '' : 'Escribe tu dirección completa.',
+  city:     v => v.length >= 2 && /^[\p{L} .'-]+$/u.test(v) ? '' : 'Escribe una ciudad o municipio válido.',
+  // The postal code is optional in Colombia; if filled in, it must have 6 digits
+  pin:      v => !v || /^\d{6}$/.test(v) ? '' : 'El código postal debe tener 6 dígitos.',
+  password: v => v.length >= 6 ? '' : 'La contraseña debe tener al menos 6 caracteres.',
+  message:  v => v.length >= 10 ? '' : 'Escribe al menos 10 caracteres.'
 };
 
 function validateField(input) {
@@ -1539,14 +1556,14 @@ function renderSummary() {
   $('#summaryItems').innerHTML = lines.map(({ product: p, qty }) => `
     <div class="summary-item">
       <img src="${p.image}" alt="">
-      <div><strong>${escapeHtml(p.name)}</strong><span>Qty: ${qty}</span></div>
+      <div><strong>${escapeHtml(p.name)}</strong><span>Cant.: ${qty}</span></div>
       <b>${money(p.price * qty)}</b>
-    </div>`).join('') || '<p style="color:var(--muted)">Your cart is empty.</p>';
+    </div>`).join('') || '<p style="color:var(--muted)">Tu carrito está vacío.</p>';
   $('#summaryTotals').innerHTML = totalsHtml(cartTotals());
 }
 
 function openCheckout() {
-  if (!cartLines().length) { toast('Your cart is empty'); return; }
+  if (!cartLines().length) { toast('Tu carrito está vacío'); return; }
   $('#checkoutView').hidden = false;
   $('#confirmView').hidden = true;
   renderSummary();
@@ -1558,13 +1575,13 @@ function placeOrder(event) {
   event.preventDefault();
   const form = event.target;
 
-  if (!cartLines().length) { toast('Your cart is empty'); return; }
+  if (!cartLines().length) { toast('Tu carrito está vacío'); return; }
 
   const fieldsOk = validateForm(form);
   const payment = form.elements.payment.value;
-  $('#payError').textContent = payment ? '' : 'Please choose a payment method.';
+  $('#payError').textContent = payment ? '' : 'Elige un método de pago.';
   if (!fieldsOk) return;
-  if (!payment) { $('#payUpi').focus(); return; }
+  if (!payment) { $('#payPse').focus(); return; }
 
   // Everything is valid — build the confirmation screen
   const data = Object.fromEntries(new FormData(form));
@@ -1576,17 +1593,17 @@ function placeOrder(event) {
   $('#confirmView').innerHTML = `
     <div class="confirm">
       <div class="tick">${icon('check')}</div>
-      <h1 tabindex="-1" id="confirmTitle">Order placed successfully!</h1>
-      <p>Thank you, ${escapeHtml(data.name.trim().split(' ')[0])}. A confirmation has been sent to <b>${escapeHtml(data.email.trim())}</b>.</p>
+      <h1 tabindex="-1" id="confirmTitle">¡Pedido realizado con éxito!</h1>
+      <p>Gracias, ${escapeHtml(data.name.trim().split(' ')[0])}. Enviamos la confirmación a <b>${escapeHtml(data.email.trim())}</b>.</p>
       <dl>
-        <div><dt>Order ID</dt><dd>#${orderId}</dd></div>
-        <div><dt>Items</dt><dd>${totals.count}</dd></div>
-        <div><dt>Total paid</dt><dd>${money(totals.total)}</dd></div>
-        <div><dt>Payment</dt><dd>${escapeHtml(payment)}</dd></div>
-        <div><dt>Deliver to</dt><dd>${escapeHtml(`${data.address.trim()}, ${data.city.trim()}, ${data.state} – ${data.pin.trim()}`)}</dd></div>
-        <div><dt>Estimated delivery</dt><dd>${delivery}</dd></div>
+        <div><dt>N.º de pedido</dt><dd>#${orderId}</dd></div>
+        <div><dt>Productos</dt><dd>${totals.count}</dd></div>
+        <div><dt>Total</dt><dd>${money(totals.total)}</dd></div>
+        <div><dt>Pago</dt><dd>${escapeHtml(payment)}</dd></div>
+        <div><dt>Enviar a</dt><dd>${escapeHtml([data.address.trim(), data.city.trim(), data.state, data.pin.trim()].filter(Boolean).join(', '))}</dd></div>
+        <div><dt>Entrega estimada</dt><dd>${delivery}</dd></div>
       </dl>
-      <button class="btn btn-primary btn-lg" data-action="continue-shopping">Continue Shopping</button>
+      <button class="btn btn-primary btn-lg" data-action="continue-shopping">Seguir comprando</button>
     </div>`;
 
   $('#checkoutView').hidden = true;
@@ -1608,7 +1625,7 @@ function setAuthTab(mode) {
   $('#tabLogin').setAttribute('aria-selected', !isRegister);
   $('#tabRegister').setAttribute('aria-selected', isRegister);
   $('#authNameField').hidden = !isRegister;
-  $('#authSubmit').textContent = isRegister ? 'Create Account' : 'Login';
+  $('#authSubmit').textContent = isRegister ? 'Crear cuenta' : 'Ingresar';
   $('#authPass').autocomplete = isRegister ? 'new-password' : 'current-password';
   clearFormErrors($('#authForm'));
 }
@@ -1619,10 +1636,10 @@ function submitAuth(event) {
   const name = authMode === 'register'
     ? $('#authName').value.trim().split(' ')[0]
     : $('#authEmail').value.trim().split('@')[0];
-  $('#loginLabel').textContent = `Hi, ${name}`;
+  $('#loginLabel').textContent = `Hola, ${name}`;
   event.target.reset();
   closeOverlay();
-  toast(authMode === 'register' ? `Account created. Welcome, ${name}!` : `Welcome back, ${name}!`);
+  toast(authMode === 'register' ? `Cuenta creada. ¡Hola, ${name}!` : `¡Qué bueno verte de nuevo, ${name}!`);
 }
 
 function submitNewsletter(event) {
@@ -1630,7 +1647,7 @@ function submitNewsletter(event) {
   const input = $('#newsEmail'), note = $('#newsNote');
   const error = RULES.email(input.value.trim());
   note.classList.toggle('ok', !error);
-  note.textContent = error || 'Thanks for subscribing! Your 10% off code is WELCOME10.';
+  note.textContent = error || '¡Gracias por suscribirte! Tu código de 10% de descuento es BIENVENIDA10.';
   if (error) input.focus(); else input.value = '';
 }
 
@@ -1638,7 +1655,7 @@ function submitContact(event) {
   event.preventDefault();
   if (!validateForm(event.target)) return;
   event.target.reset();
-  toast("Message sent! We'll get back to you within 24 hours.");
+  toast('¡Mensaje enviado! Te responderemos en menos de 24 horas.');
 }
 
 // Mobile menu + mobile search
@@ -1693,7 +1710,7 @@ const ACTIONS = {
   'inc':            el => changeQty(el.dataset.id, +1),
   'dec':            el => changeQty(el.dataset.id, -1),
   'remove':         el => removeFromCart(el.dataset.id),
-  'clear-cart':     () => { if (confirm('Remove all items from your cart?')) { clearCart(); toast('Cart cleared'); } },
+  'clear-cart':     () => { if (confirm('¿Quieres eliminar todos los productos del carrito?')) { clearCart(); toast('Carrito vaciado'); } },
   'open-cart':      () => openOverlay($('#cartDrawer')),
   'open-checkout':  () => openCheckout(),
   'open-login':     () => { setAuthTab('login'); openOverlay($('#loginModal')); },
